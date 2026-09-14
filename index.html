@@ -4,44 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>okyelloo — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:'Space Grotesk',sans-serif;min-height:100vh;padding:20px}
+body{background:#0a0a0a;color:#fff;font-family:'Space Grotesk',sans-serif;padding:20px;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto}
-.header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;margin-bottom:10px}
-.logo{font-weight:700;font-size:22px;letter-spacing:-1px}
-.logo span{color:#a3ff12}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:16px}
-.card{background:#151515;border:1px solid #222;border-radius:24px;padding:24px;position:relative}
-.b1{grid-column:span 2;grid-row:span 2}
+.header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:700;font-size:22px} .logo span{color:#a3ff12}
+.nav a{color:#888;text-decoration:none;margin-left:20px;font-size:14px}
+.nav a:hover{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:185px;gap:16px;margin-top:10px}
+.card{background:#151515;border:1px solid #222;border-radius:28px;padding:24px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.card:hover{transform:translateY(-6px) scale(1.01);border-color:#333;box-shadow:0 20px 40px rgba(0,0,0,.5), 0 0 0 1px #2a2a2a inset}
+.card:active{transform:scale(.98)}
+.b1{grid-column:span 2;grid-row:span 2;background:radial-gradient(120% 120% at 0% 0%, #1e1e1e, #151515)}
 .b2{grid-column:span 2;grid-row:span 1}
 .b3{grid-column:span 1;grid-row:span 1;background:#a3ff12;color:#000}
+.b3:hover{box-shadow:0 20px 40px rgba(163,255,18,.3)!important}
 .b4{grid-column:span 1;grid-row:span 1}
 .b5{grid-column:span 1;grid-row:span 2}
 .b6{grid-column:span 2;grid-row:span 1}
-.b7{grid-column:span 1;grid-row:span 1;background:#222}
-.profile-img{width:70px;height:70px;border-radius:50%;background:#222 url('https://github.com/okyelloo.png') center/cover;margin-bottom:16px}
-h1{font-size:38px;line-height:0.9;letter-spacing:-2px;margin-bottom:10px}
-p{color:#888;font-size:14px;line-height:1.5}
+.b7{grid-column:span 1;grid-row:span 1;background:linear-gradient(135deg,#1e1e1e,#151515)}
+.profile-img{width:72px;height:72px;border-radius:50%;background:#222 url('https://github.com/okyelloo.png') center/cover;border:2px solid #333;transition:.4s}
+.card:hover .profile-img{border-color:#a3ff12;transform:scale(1.05)}
+.badge{background:#222;border:1px solid #333;padding:6px 12px;border-radius:20px;font-size:11px;color:#aaa;font-family:'JetBrains Mono';display:inline-block;margin-bottom:14px}
+h1{font-size:40px;line-height:.9;letter-spacing:-2.5px}
+h2{font-size:19px}
+p{color:#888;font-size:13.5px;line-height:1.6}
+.big-num{font-size:52px;font-weight:700;letter-spacing:-2px}
+.cta{display:inline-flex;background:#fff;color:#000;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:700;font-size:13px;margin-top:20px;transition:.3s}
+.cta:hover{background:#a3ff12;transform:translateY(-2px)}
+.skill{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.skill span{background:#1f1f1f;border:1px solid #2a2a2a;padding:6px 12px;border-radius:20px;font-size:11px;color:#ccc;transition:.3s}
+.card:hover .skill span{border-color:#333}
+.wa-btn{display:flex;align-items:center;gap:8px;background:#25D366;color:#000;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:12px;margin-top:14px;width:fit-content}
+.wa-btn:hover{background:#a3ff12}
+.project-link{position:absolute;inset:0;z-index:2}
+.glow{position:absolute;width:200px;height:200px;background:radial-gradient(circle, rgba(163,255,18,.15), transparent 70%);top:-50px;right:-50px;pointer-events:none;opacity:0;transition:.4s}
+.card:hover .glow{opacity:1}
 @media(max-width:800px){.grid{grid-template-columns:1fr;grid-auto-rows:auto}.b1,.b2,.b3,.b4,.b5,.b6,.b7{grid-column:span 1}}
 </style>
 </head>
 <body>
 <div class="container">
+<div class="header">
+<div class="logo">okyelloo<span>.</span></div>
+<div class="nav"><a href="https://github.com/okyelloo">GitHub</a><a href="#contact">Contact</a></div>
+</div>
+
 <div class="grid">
-<div class="card b1">
+<div class="card b1" onclick="window.open('https://github.com/okyelloo','_blank')">
+<div class="glow"></div>
 <div class="profile-img"></div>
+<div class="badge">● AVAILABLE FOR PROJECT</div>
 <h1>MUHAMMAD<br>OKY</h1>
-<p>Developer dari Indonesia. Akun GitHub dari 2021. Suka bikin web simple yang fungsional.</p>
+<p style="margin-top:10px">Developer dari Indonesia. Akun GitHub dari 2021. Suka bikin web simple yang fungsional & clean.</p>
+<span class="cta">Lihat GitHub →</span>
 </div>
-<div class="card b2"><h2>Anak Muda yang Suka Ngulik 💻</h2><p>Fokus web dev, lagi belajar desain modern 2026.</p></div>
-<div class="card b3"><h1>2021</h1><p style="color:#000">Join GitHub</p></div>
-<div class="card b4"><p>LOCATION</p><h2>Indonesia 🇮🇩</h2><p>Padangguci, Bengkulu</p></div>
-<div class="card b5"><h2>Tech Stack</h2><p>HTML, CSS, JS, Git, GitHub Pages</p></div>
-<div class="card b6"><h2>okyelloo.github.io</h2><p>Portfolio Bento Dark Mode 2026</p></div>
-<div class="card b7"><h2>Let's Connect</h2><p>IG: okyelloo</p></div>
+
+<div class="card b2">
+<div class="glow"></div>
+<h2>Anak Muda yang Suka Ngulik 💻</h2>
+<p style="margin-top:8px">Fokus web dev, lagi belajar desain modern 2026. Bento grid, micro-interaction, dan dark mode enthusiast.</p>
+</div>
+
+<div class="card b3" onclick="window.open('https://github.com/okyelloo','_blank')">
+<div class="big-num">2021</div>
+<p style="color:#000;opacity:.8;margin-top:4px">Join GitHub since</p>
+<p style="color:#000;font-weight:700;margin-top:10px;font-size:12px">3+ YEARS CODING →</p>
+</div>
+
+<div class="card b4">
+<p style="font-family:'JetBrains Mono';font-size:10px;color:#666">LOCATION</p>
+<h2 style="margin-top:10px">Indonesia ID</h2>
+<p>Padangguci, Bengkulu</p>
+<p style="margin-top:12px;font-size:11px;background:#1f1f1f;padding:4px 8px;border-radius:10px;width:fit-content">29°C Cerah</p>
+</div>
+
+<div class="card b5">
+<p style="font-family:'JetBrains Mono';font-size:10px;color:#666">STACK & SKILL</p>
+<h2 style="margin-top:10px">Tech Stack</h2>
+<div class="skill">
+<span>HTML</span><span>CSS</span><span>JS</span><span>Git</span><span>GitHub Pages</span><span>Bento Design</span>
+</div>
+<p style="margin-top:18px">Next: React & Tailwind</p>
+<div class="skill"><span style="background:#a3ff12;color:#000;border:none;font-weight:700">● Learning</span></div>
+</div>
+
+<div class="card b6" onclick="window.open('https://github.com/okyelloo/okyelloo.github.io','_blank')">
+<div class="glow"></div>
+<p style="font-family:'JetBrains Mono';font-size:10px;color:#666">LATEST PROJECTS</p>
+<h2 style="margin-top:10px">okyelloo.github.io</h2>
+<p>Portfolio Bento Dark Mode 2026 • Click to view repo</p>
+<div class="skill"><span style="background:#a3ff12;color:#000;border:none;font-weight:700">Live</span><span>github.io</span><span>New ✨</span></div>
+</div>
+
+<div class="card b7" id="contact">
+<h2>Let's Connect</h2>
+<p>IG: okyelloo</p>
+<a class="wa-btn" href="https://wa.me/082282501696?text=Halo%20Oky,%20liat%20portfolio%20lu%20di%20okyelloo.github.io%20keren%20banget!" target="_blank">
+💬 Chat WA
+</a>
+<p style="font-size:10px;margin-top:10px;color:#555">ganti nomor di kode ya!</p>
 </div>
 </div>
+
+<p style="text-align:center;color:#333;margin-top:50px;font-family:'JetBrains Mono';font-size:10px">© 2026 OKYELLOO • BENTO GRID DARK • BUILT FOR GITHUB PAGES</p>
+</div>
+
+<script>
+// efek kursor glow follow
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const glow = card.querySelector('.glow');
+    if(glow){ glow.style.left = x -100 + 'px'; glow.style.top = y -100 + 'px'; glow.style.opacity = 1; }
+  });
+  card.addEventListener('mouseleave', ()=>{
+    const glow = card.querySelector('.glow');
+    if(glow) glow.style.opacity = 0;
+  });
+});
+</script>
 </body>
 </html>
